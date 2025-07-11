@@ -1,0 +1,35 @@
+Muszaktervezo/
+│
+├── main.py                      # Belépési pont (alkalmazás indítása)
+│
+├── models/                      # ORM osztályok (SQLAlchemy modellek)
+│   ├── __init__.py              # Modellek importálása egy helyről
+│   ├── base.py                  # Base = declarative_base()
+│   ├── user.py                  # User (esetleg Role, Department, ha kell)
+│   └── shift.py                 # ShiftType, ShiftAssignment
+│
+├── database/
+│   ├── __init__.py
+│   ├── connection.py            # Engine + sessionmaker beállítása
+│   └── create_db.py             # Base.metadata.create_all() futtatása
+│
+├── gui/
+│   ├── __init__.py
+│   ├── main_window.py           # Fő Tkinter ablak
+│   └── views/                   # GUI nézetek
+│       ├── shift_view.py        # Műszak heti nézet (Canvas rajzolás)
+│       ├── shift_editor.py      # Műszak bevitel/szerkesztés
+│       └── user_view.py         # (opcionális) dolgozók kezelése
+│
+├── services/                    # Üzleti logika (adatkezelés, CRUD)
+│   ├── __init__.py
+│   ├── shift_service.py         # Műszakbeosztások kezelése
+│   └── user_service.py          # Felhasználók lekérdezése stb.
+│
+├── seed/                        # Kezdőadatok betöltése
+│   ├── __init__.py
+│   └── seed_data.py             # Alapműszakok, felhasználók betöltése
+│
+├── config.py                    # Beállítások (pl. adatbázis elérési út)
+├── requirements.txt             # Függőségek (SQLAlchemy, Tkinter stb.)
+└── README.md                    # Rövid dokumentáció a projekthez
